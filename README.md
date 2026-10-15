@@ -1,26 +1,21 @@
 # 项目名称
 
-> 简短项目描述，一句话说明这个仓库是做什么的
+> 学生自建仓库，存放各种源代码和原创mod
 
-[![GitHub stars](https://img.shields.io/github/stars/miku823/xxx?style=flat-square)](https://github.com/miku823/)
-[![GitHub forks](https://img.shields.io/github/forks/miku823/xxx?style=flat-square)](https://github.com/miku823/)
-[![License](https://img.shields.io/github/license/miku823/xxx?style=flat-square)](LICENSE)
 
 ## 📖 简介
 对项目进行详细介绍：
-- 项目解决什么问题
-- 主要功能特性
-- 适用场景
+- Midi：Java内置midi编译器编译歌单
+- item locallaw：部分工程实例
 
 ## ✨ 功能特性
-- ✅ 功能1
-- ✅ 功能2
 - ⏳ 待开发功能
 
 ## 🚀 快速开始
+-待开发
 
 ### 环境依赖
-列出需要的运行环境、软件版本、依赖库。
+VS CODE,Python（ev2gym pulp pandas numpy plotly streamlit stable-baselines3）
 
 ### 克隆仓库
 ```bash
