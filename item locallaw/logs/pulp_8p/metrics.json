@@ -1,0 +1,10 @@
+{
+  "strategy": "pulp",
+  "n_piles": 8,
+  "seed": 2024,
+  "peak_kw": 35.15598705875638,
+  "completion_rate": 1.0,
+  "total_cost_eur": 13.531775400387525,
+  "total_ev_served": 15,
+  "avg_user_satisfaction": 1.0
+}

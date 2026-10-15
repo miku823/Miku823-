@@ -1,0 +1,10 @@
+{
+  "strategy": "fcfs",
+  "n_piles": 5,
+  "seed": 2024,
+  "peak_kw": 21.64929689662433,
+  "completion_rate": 1.0,
+  "total_cost_eur": 5.183471131063965,
+  "total_ev_served": 8,
+  "avg_user_satisfaction": 1.0
+}

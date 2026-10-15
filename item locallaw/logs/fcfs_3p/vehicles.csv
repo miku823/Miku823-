@@ -1,0 +1,6 @@
+﻿arrival_step,departure_step,battery_capacity_kwh,final_capacity_kwh,desired_capacity_kwh,final_soc,completed
+11,38,52.0,52.0,52.0,1.0,True
+12,36,57.5,57.5,57.5,1.0,True
+18,39,58.0,58.0,58.0,1.0,True
+41,56,75.0,75.0,75.0,1.0,True
+42,55,52.0,52.0,52.0,1.0,True

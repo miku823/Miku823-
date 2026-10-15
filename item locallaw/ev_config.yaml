@@ -1,0 +1,124 @@
+# ============================================================================
+# ev2gym 仿真配置文件：5 个充电桩的电动汽车充电调度场景
+# ============================================================================
+
+##############################################################################
+# 仿真基本参数
+##############################################################################
+timescale: 15                # 每个仿真步长 15 分钟
+simulation_length: 96        # 96 步 = 24 小时
+
+##############################################################################
+# 日期与时间
+##############################################################################
+year: 2022
+month: 1
+day: 17
+random_day: True             # 每次 reset 随机选择日期（电价随之变化）
+random_hour: False
+hour: 5                      # 仿真起始时刻：凌晨 5 点
+minute: 0
+simulation_days: both        # 工作日/周末均可
+
+# 车辆到达行为：public 公共充电场景（基于真实到达分布随机到达）
+scenario: public
+spawn_multiplier: 25         # 到达率放大系数（越大车辆越多，每天约 9-10 辆）
+
+##############################################################################
+# 电价
+##############################################################################
+discharge_price_factor: 1    # 放电价格相对充电价格的倍数（本场景不放电）
+
+##############################################################################
+# 配电网络设置
+##############################################################################
+v2g_enabled: False           # 不启用 V2G（只允许充电，不允许放电）
+number_of_charging_stations: 5   # 5 个充电站
+number_of_ports_per_cs: 1        # 每站 1 个端口 → 共 5 个充电桩
+number_of_transformers: 1        # 1 台变压器
+charging_network_topology: None  # 使用随机拓扑（由上面参数决定）
+
+simulate_grid: False         # 不做潮流计算（保留变压器容量约束的统计）
+network_info:
+  vm_pu: 1.0
+  s_base: 1000
+  load_multiplier: 1
+  pv_scale: 80
+  bus_info_file: './ev2gym/data/network_data/node_34/Nodes_34.csv'
+  branch_info_file: './ev2gym/data/network_data/node_34/Lines_34.csv'
+
+pf_solver: 'Laurent'
+
+##############################################################################
+# 功率设定点（本任务不做功率跟踪，关闭）
+##############################################################################
+power_setpoint_enabled: False
+power_setpoint_flexiblity: 80
+
+##############################################################################
+# 不可控负荷 / 光伏 / 需求响应（关闭，聚焦充电调度本身）
+##############################################################################
+tr_seed: -1
+
+inflexible_loads:
+  include: False
+  inflexible_loads_capacity_multiplier_mean: 1
+  forecast_mean: 30
+  forecast_std: 5
+
+solar_power:
+  include: False
+  solar_power_capacity_multiplier_mean: 1
+  forecast_mean: 20
+  forecast_std: 5
+
+demand_response:
+  include: False
+  events_per_day: 1
+  event_capacity_percentage_mean: 35
+  event_capacity_percentage_std: 5
+  event_length_minutes_min: 60
+  event_length_minutes_max: 60
+  event_start_hour_mean: 12
+  event_start_hour_std: 2
+  notification_of_event_minutes: 60
+
+##############################################################################
+# 车辆规格（使用真实车型库，异构电池容量/充电功率）
+##############################################################################
+heterogeneous_ev_specs: True
+ev_specs_file: E:/python/Lib/site-packages/ev2gym/data/ev_specs_ev_plus_phev.json
+
+##############################################################################
+# 默认设备模型
+##############################################################################
+# 变压器：容量 40 kW（5 个桩满功率 5*11=55 kW > 40 kW，形成调度压力）
+transformer:
+  max_power: 40
+
+# 充电桩：16A / 400V / 三相 → 最大充电功率约 11 kW
+charging_station:
+  min_charge_current: 0
+  max_charge_current: 16
+  min_discharge_current: 0
+  max_discharge_current: 0
+  voltage: 400
+  phases: 3
+
+# 车辆默认模型（heterogeneous_ev_specs=True 时部分参数由车型库采样）
+ev:
+  battery_capacity: 50
+  max_ac_charge_power: 11
+  min_ac_charge_power: 0
+  max_dc_charge_power: 50
+  max_discharge_power: -11
+  min_discharge_power: 0
+  ev_phases: 3
+  charge_efficiency: 1
+  discharge_efficiency: 1
+  transition_soc: 0.8        # CCCV 拐点 SOC=0.8，之后充电功率线性衰减（保留完整电池约束）
+  min_battery_capacity: 5
+  min_time_of_stay: 60
+  min_emergency_battery_capacity: 25
+  desired_capacity: 1        # 目标 SOC = 100% 电池容量
+  transition_soc_multiplier: 5

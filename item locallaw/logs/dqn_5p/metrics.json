@@ -1,0 +1,10 @@
+{
+  "strategy": "dqn",
+  "n_piles": 5,
+  "seed": 2024,
+  "peak_kw": 15.919743144109596,
+  "completion_rate": 0.625,
+  "total_cost_eur": 3.8150736285698996,
+  "total_ev_served": 8,
+  "avg_user_satisfaction": 0.9695975346667918
+}
