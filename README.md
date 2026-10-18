@@ -9,13 +9,13 @@
 - item locallaw：部分工程实例
 
 ## ✨ 功能特性
-- ⏳ 待开发功能
+待开发
 
 ## 🚀 快速开始
--待开发
+待开发
 
 ### 环境依赖
-VS CODE,Python（ev2gym pulp pandas numpy plotly streamlit stable-baselines3）
+VS CODE,Python（ev2gym pulp pandas numpy plotly streamlit stable-baselines3,IntelliJ
 
 ### 克隆仓库
 ```bash
