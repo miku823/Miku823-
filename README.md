@@ -4,7 +4,6 @@
 
 
 ## 📖 简介
-对项目进行详细介绍：
 - Midi：Java内置midi编译器编译歌单
 - item locallaw：部分工程实例
 
