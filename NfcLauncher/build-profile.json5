@@ -1,0 +1,50 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\qq114\\.ohos\\config\\default_NfcLauncher_2Q0KfIGGwMyV9VLiAgJ7mA3L5i_2_kL78eBT7SegHE4=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001BCB154540CE34B72BE4F204A138A15D26E2EA5698ECEBD5F6C3AC8A9F6E78E8E4FD3D8048188DD4",
+          "profile": "C:\\Users\\qq114\\.ohos\\config\\default_NfcLauncher_2Q0KfIGGwMyV9VLiAgJ7mA3L5i_2_kL78eBT7SegHE4=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\qq114\\.ohos\\config\\default_NfcLauncher_2Q0KfIGGwMyV9VLiAgJ7mA3L5i_2_kL78eBT7SegHE4=.p12",
+          "storePassword": "0000001BD7F9137B69D6A27A3122B926815F8C929EC6FEADCCBF9E66F200CBD27B440030C8DCAE3588FD95"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.0(12)",
+        "runtimeOS": "HarmonyOS",
+        "targetSdkVersion": "26.0.0"
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

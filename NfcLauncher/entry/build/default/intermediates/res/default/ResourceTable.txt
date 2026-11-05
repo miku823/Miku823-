@@ -1,0 +1,9 @@
+string EntryAbility_desc 0x01000002
+string EntryAbility_label 0x01000003
+string app_name 0x01000000
+string module_desc 0x01000004
+string permission_reason_nfc 0x01000005
+color start_window_background 0x01000006
+media app_icon 0x01000001
+media startIcon 0x01000007
+profile main_pages 0x01000008

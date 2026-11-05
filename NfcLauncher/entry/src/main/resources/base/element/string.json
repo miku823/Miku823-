@@ -1,0 +1,20 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "NFC tag auto app launcher"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Main ability"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "NFC跳转助手"
+    },
+    {
+      "name": "permission_reason_nfc",
+      "value": "用于读取NFC标签以触发已绑定的应用跳转"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "modelVersion": "5.0.0",
+  "name": "nfclauncher",
+  "version": "1.0.0",
+  "description": "Bind an NFC tag to an app bundle, auto launch the app when the tag is scanned.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {}
+}
